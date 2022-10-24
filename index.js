@@ -21,11 +21,13 @@ function login() {
             data.username == formData.username &&
             data.password == formData.password
           ) {
+            let main = document.getElementById("main");
+            main.innerHTML = "Kamu berhasil masuk";
             window.location.href = "utama.html";
           }
           else{
-            let gagal = document.getElementById("gagal");
-            gagal.innerHTML = "Oops, akun tidak ada";
+            let main = document.getElementById("main");
+            main.innerHTML = "Oops, akun tidak ada";
           }
         });
       })
