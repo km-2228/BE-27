@@ -1,15 +1,14 @@
-document.getElementById("submit2").addEventListener("click", function (event) {
+document.getElementById("submit").addEventListener("click", function (event) {
     event.preventDefault();
-    register();
+    tambah_status();
   });
   
-  function register() {
+  function tambah_status() {
     console.log("clicked");
   
     let formData = {
-      username: document.getElementById("username").value,
-      password: document.getElementById("password").value,
-      nama: document.getElementById("nama").value
+      judul: document.getElementById("judul").value,
+      status: document.getElementById("status").value
     };
   
     console.log(formData);
@@ -31,12 +30,12 @@ document.getElementById("submit2").addEventListener("click", function (event) {
     }
   
     postData(
-      "https://63515f33dfe45bbd55be6e39.mockapi.io/aseanyouthforum/akun",
+      "https://63515f33dfe45bbd55be6e39.mockapi.io/aseanyouthforum/forum2",
       formData
     ).then((data) => {
-      let status = document.getElementById("hasil");
-      status.innerHTML = "Berhasil Mendaftar";
+    let status = document.getElementById("status");
+      status.innerHTML = "Artikel Dikirim";
       console.log(data);
-      window.location.href = "index.html";
+      window.location.href = "utama.html";
     });
   }
